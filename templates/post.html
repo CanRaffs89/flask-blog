@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/main.css">
-    <title>BlogIt | Home</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block body %}
     <div class="container">
-        <nav class="footer-menu">
-            <a class="menu-icon" id="home" href="index.html"></a>
-            <a class="menu-icon" id="new-post" href="#"></a>
-            <a class="menu-icon" id="account" href="#"></a>
-        </nav>
+        {% include 'navbar.html' %}
         <article class="main-post">
             <section class="header-text">
-                <h3>JAN 1, 2021 | BY JANE DOE</h3>
-                <h1>10 Things To Do In Toronto</h1>
+                <h3>{{post.date_created}} | {{post.author}}</h3>
+                <h1>{{post.title}}</h1>
             </section>
-            <img class="main-post-img" src="../static/img/toronto.jpg" alt="Toronto City Hall with illuminated sign">
+            <img class="main-post-img" src="{{post.image}}" alt="{{post.image_alt_text}}">
             <section class="body-text">
-                <p>Laborum ullam quo quo quia nesciunt ut fuga illum. Ullam nihil nulla id consequatur minus autem beatae expedita. Rerum sed error id quas at quos est. Qui quos quasi ad consectetur facere.</p>
-                <p>Ad veniam aut quisquam. Molestias et deserunt ex inventore molestiae ab delectus. Hic accusamus voluptatem unde soluta tenetur non quaerat. Labore officiis minima explicabo consectetur quo repellendus voluptates fuga. Dicta excepturi totam optio ea vero eligendi molestias. Unde ut dolorum praesentium similique consequatur tenetur dolorem amet.</p>
-                <p>Qui eum vitae assumenda consequatur aut nesciunt. Hic beatae et totam. Et quibusdam qui consequatur sint aut accusantium quis.</p>
-                <p>Qui sed aut assumenda et dolore nihil quia. Nemo ipsam rerum ad id autem voluptatem quidem in.</p>
+                <p>{{post.intro_paragraph}}</p>
+                <p>{{post.content}}</p>
             </section>
         </article>
     </div>
-</body>
-</html>
+{% endblock %}
+
