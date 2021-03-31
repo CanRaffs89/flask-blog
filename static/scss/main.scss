@@ -5,15 +5,30 @@ $primary-color: #4C838B;
     scroll-behavior: smooth;
 }
 
-body {
-    height: 100%;
-    width: 100%;
+* {
     margin: 0;
     padding: 0;
 }
 
+body {
+    height: 100%;
+    width: 100%;
+}
+
 a {
     text-decoration: none;
+}
+
+h1, p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+h3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    letter-spacing: 0.0625rem;
 }
 
 .container {
@@ -23,3 +38,4 @@ a {
 
 @import 'navbar';
 @import 'main-blog';
+@import 'blog-post';

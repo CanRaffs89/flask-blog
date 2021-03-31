@@ -1,5 +1,5 @@
 main {
-    margin: 0 auto;
+    margin: 75px auto 0 auto;
     width: 70%;
     
     .blog-post {
@@ -24,17 +24,6 @@ main {
                 color: #000;
             }
 
-            h3 {
-                font-family: 'Helvetica Neue', sans-serif;
-                font-size: 0.8125rem;
-                letter-spacing: 0.0625rem;
-            }
-
-            h1, p {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                font-weight: 400;
-            }
-
             h1 {
                 font-size: 2.5rem;
                 letter-spacing: 0.0625rem;
@@ -50,10 +39,12 @@ main {
 
 @media (max-width: 1000px) {
     main {
+        margin: 50px auto;
         width: 80%;
 
         .blog-post {
             min-height: 100px;
+            margin-top: 20px;
 
             img {
                 width: 100px;
