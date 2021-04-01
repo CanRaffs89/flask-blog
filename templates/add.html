@@ -6,21 +6,22 @@
     <div class="form-container">
         <h1>Add a New Post</h1>
         <form action="{{ url_for('add_post') }}" method="POST">
-            <label>Title</label>
-            <input name="title" type="text">
-            <label>Author</label>
-            <input name="author" type="text">
-            <label>Blurb Paragraph</label>
-            <input name="intro" type="text">
-            <label>Content</label>
-            <input name="content" type="text">
-            <label>Today's Date</label>
-            <input name="date" type="text">
-            <label>Image URL</label>
-            <input name="image" type="text">
-            <label>Image Description</label>
-            <input name="alt_text" type="text">
-            <button type="submit">Add Post</button>
+            {{ form.hidden_tag() }}
+            {{ form.title.label() }}
+            {{ form.title() }}
+            {{ form.author.label() }}
+            {{ form.author() }}
+            {{ form.subtitle.label() }}
+            {{ form.subtitle() }}
+            {{ form.content.label() }}
+            {{ form.content() }}
+            {{ form.date.label() }}
+            {{ form.date() }}
+            {{ form.image.label() }}
+            {{ form.image() }}
+            {{ form.image_text.label() }}
+            {{ form.image_text() }}
+            {{ form.submit() }}
         </form>
     </div>
 </div>
