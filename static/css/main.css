@@ -8,13 +8,14 @@
 
 body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background-color: #e2e2e2; }
 
 a {
   text-decoration: none; }
 
 h1, p, h3 {
-  color: #23252b; }
+  color: #131619; }
 
 h1, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -28,11 +29,11 @@ h3 {
   text-transform: uppercase; }
 
 .container {
-  height: 100vh;
+  height: auto;
   width: 100%; }
 
 .footer-menu {
-  background: #23252b;
+  background: #282c34;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
