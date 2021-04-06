@@ -31,13 +31,11 @@ class NewPostForm(FlaskForm):
     image_text = StringField("Image Description", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
-all_posts = Post.query.all()
-
 today = datetime.date.today().strftime("%b %d, %Y")
 
 @app.route("/")
 def home():
-    all_posts = Post.query.all()
+    all_posts = Post.query.order_by(Post.date_created).all()
     return render_template("index.html", posts=all_posts)
 
 @app.route("/post/<int:post_id>")

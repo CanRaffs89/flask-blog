@@ -13,6 +13,9 @@ body {
 a {
   text-decoration: none; }
 
+h1, p, h3 {
+  color: #23252b; }
+
 h1, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400; }
@@ -29,7 +32,7 @@ h3 {
   width: 100%; }
 
 .footer-menu {
-  background: #4C838B;
+  background: #23252b;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -79,8 +82,7 @@ main {
       flex-direction: column;
       justify-content: space-evenly; }
       main .blog-post .blog-post-text h3, main .blog-post .blog-post-text h1, main .blog-post .blog-post-text p {
-        margin: 0;
-        color: #000; }
+        margin: 0; }
       main .blog-post .blog-post-text h1 {
         font-size: 2.5rem;
         letter-spacing: 0.0625rem; }
