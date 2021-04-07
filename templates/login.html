@@ -2,5 +2,21 @@
 
 {% block body %}
 {% include 'navbar.html' %}
-<h1>You found the Login Page</h1>
+<div class="container">
+    <div class="form-container">
+        <h1>Register</h1>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username.label() }}
+            {{ form.username() }}
+            {{ form.email.label() }}
+            {{ form.email() }}
+            {{ form.password.label() }}
+            {{ form.password() }}
+            {{ form.password_confirm.label() }}
+            {{ form.password_confirm() }}
+            {{ form.submit() }}
+        </form>
+    </div>
+</div>
 {% endblock %}

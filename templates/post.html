@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+<title>Flask Blog - {{ post.title }}</title>
+{% endblock %}
+
 {% block body %}
     <div class="container">
         {% include 'navbar.html' %}

@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired
-from flask_sqlalchemy import SQLAlchemy
 import datetime
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+from forms import NewPostForm, RegisterForm, LoginForm
 
 
 app = Flask(__name__)
@@ -21,15 +19,6 @@ class Post(db.Model):
     date_created = db.Column(db.String, nullable=False)
     image = db.Column(db.String, nullable=False)
     image_alt_text = db.Column(db.String, nullable=False)
-
-class NewPostForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired()])
-    author = StringField("Author", validators=[DataRequired()])
-    subtitle = StringField("Subtitle", validators=[DataRequired()])
-    content = TextAreaField("Content", validators=[DataRequired()])
-    image = StringField("Image URL", validators=[DataRequired()])
-    image_text = StringField("Image Description", validators=[DataRequired()])
-    submit = SubmitField("Submit")
 
 today = datetime.date.today().strftime("%b %d, %Y")
 
@@ -63,7 +52,8 @@ def add_post():
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    form = RegisterForm()
+    return render_template("login.html", form=form)
 
 if __name__ == "__main__":
     app.run(debug=True)
