@@ -9,7 +9,7 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: #e2e2e2; }
+  background-color: #eaeaea; }
 
 a {
   text-decoration: none; }
@@ -21,12 +21,11 @@ h1, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400; }
 
-h3 {
+h3, label, #submit {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
-  letter-spacing: 0.0625rem;
-  text-transform: uppercase; }
+  letter-spacing: 0.0625rem; }
 
 .container {
   height: auto;
@@ -90,6 +89,8 @@ main {
       main .blog-post .blog-post-text p {
         font-size: 1.125rem;
         letter-spacing: 0rem; }
+      main .blog-post .blog-post-text h3 {
+        text-transform: uppercase; }
 
 @media (max-width: 1000px) {
   main {
@@ -117,7 +118,8 @@ main {
   .main-post .header-text {
     margin-bottom: 50px; }
     .main-post .header-text h3 {
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      text-transform: uppercase; }
     .main-post .header-text h1 {
       font-size: 2.5rem;
       letter-spacing: 0.0625rem; }
@@ -162,8 +164,28 @@ main {
   height: auto;
   padding-left: 50px;
   margin: 75px auto; }
+  .form-container h1 {
+    padding-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 0.0625rem; }
   .form-container form {
     display: flex;
     flex-direction: column; }
+    .form-container form label {
+      padding: 20px 0 5px 0; }
+    .form-container form #submit {
+      margin: 20px auto 0 auto;
+      width: 40%;
+      height: 30px;
+      border: none;
+      background-color: #282c34;
+      color: #eaeaea;
+      text-decoration: none;
+      border-radius: 15px; }
+
+@media (max-width: 1000px) {
+  .form-container {
+    width: 80%;
+    padding-left: 0; } }
 
 /*# sourceMappingURL=main.css.map */

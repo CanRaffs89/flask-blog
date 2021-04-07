@@ -1,6 +1,6 @@
-$navbar-grey: #282c34;
+$grey: #282c34;
 $dark: #131619;
-$light: #e2e2e2;
+$light: #eaeaea;
 
 :root {
     font-size: 16px;
@@ -31,12 +31,11 @@ h1, p {
     font-weight: 400;
 }
 
-h3 {
+h3, label, #submit {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 400;
     font-size: 0.8125rem;
     letter-spacing: 0.0625rem;
-    text-transform: uppercase;
 }
 
 .container {

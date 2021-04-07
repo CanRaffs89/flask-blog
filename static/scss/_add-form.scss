@@ -4,8 +4,36 @@
     padding-left: 50px;
     margin: 75px auto;
 
+    h1 {
+        padding-bottom: 20px;
+        font-size: 2rem;
+        letter-spacing: 0.0625rem;
+    }
+
     form {
         display: flex;
         flex-direction: column;
+
+        label {
+            padding: 20px 0 5px 0;
+        }
+
+        #submit {
+            margin: 20px auto 0 auto;
+            width: 40%;
+            height: 30px;
+            border: none;
+            background-color: $grey;
+            color: $light;
+            text-decoration: none;
+            border-radius: 15px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .form-container {
+        width: 80%;
+        padding-left: 0;
     }
 }
