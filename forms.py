@@ -5,11 +5,9 @@ from wtforms.validators import DataRequired, Email, EqualTo
 
 class NewPostForm(FlaskForm):
     title = StringField("Title", validators=[DataRequired()])
-    author = StringField("Author", validators=[DataRequired()])
     subtitle = StringField("Subtitle", validators=[DataRequired()])
     content = TextAreaField("Content", validators=[DataRequired()])
     image = StringField("Image URL", validators=[DataRequired()])
-    image_text = StringField("Image Description", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
 class RegisterForm(FlaskForm):

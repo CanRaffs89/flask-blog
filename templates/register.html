@@ -4,18 +4,20 @@
 {% include 'navbar.html' %}
 <div class="container">
     <div class="form-container">
-        <h1>Log In</h1>
+        <h1>Register</h1>
         <form action="" method="POST">
             {{ form.hidden_tag() }}
+            {{ form.username.label() }}
+            {{ form.username() }}
             {{ form.email.label() }}
             {{ form.email() }}
             {{ form.password.label() }}
             {{ form.password() }}
-            {{ form.remember.label() }}
-            {{ form.remember() }}
+            {{ form.password_confirm.label() }}
+            {{ form.password_confirm() }}
             {{ form.submit() }}
         </form>
-        <h3 id="account-link"><a href="{{ url_for('register') }}">Don't have an account?</a></h3>
+        <h3 id="account-link"><a href="{{ url_for('login') }}">Already have an account?</a></h3>
     </div>
 </div>
 {% endblock %}

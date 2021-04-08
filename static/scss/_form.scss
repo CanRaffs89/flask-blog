@@ -3,6 +3,8 @@
     height: auto;
     padding-left: 50px;
     margin: 75px auto;
+    display: flex;
+    flex-direction: column;
 
     h1 {
         padding-bottom: 20px;
@@ -28,6 +30,15 @@
             text-decoration: none;
             border-radius: 15px;
         }
+
+        #remember {
+            align-self: flex-start;
+        }
+    }
+    #account-link {
+        padding-top: 10px;
+        align-self: center;
+        color: $dark;
     }
 }
 
