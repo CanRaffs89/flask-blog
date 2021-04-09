@@ -12,6 +12,7 @@
 node_modules/
 .tmp/
 *.vscode
+__pycache__
 
 # OS or Editor folders
 .DS_Store
