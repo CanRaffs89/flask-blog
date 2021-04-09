@@ -1,18 +1,8 @@
 import datetime
-from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_sqlalchemy import SQLAlchemy
-from forms import NewPostForm, RegisterForm, LoginForm
-
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '40014fa522110b5a21b52cca'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-
-
-from models import User, Post
- 
+from flask import render_template, redirect, url_for, flash, request
+from app import app, db
+from app.forms import NewPostForm, RegisterForm, LoginForm
+from app.models import User, Post
 
 @app.route("/")
 def home():
@@ -57,6 +47,3 @@ def login():
         flash("Successfully logged in")
         return redirect(url_for("home"))
     return render_template("login.html", form=form)
-
-if __name__ == "__main__":
-    app.run(debug=True)
