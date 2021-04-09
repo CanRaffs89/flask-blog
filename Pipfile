@@ -9,6 +9,7 @@ flask-wtf = "*"
 wtforms = "*"
 flask-sqlalchemy = "*"
 email-validator = "*"
+flask-ckeditor = "*"
 
 [dev-packages]
 

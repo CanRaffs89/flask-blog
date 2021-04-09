@@ -175,6 +175,8 @@ main {
     flex-direction: column; }
     .form-container form label {
       padding: 20px 0 5px 0; }
+    .form-container form #cke_ckeditor {
+      margin-top: 20px; }
     .form-container form #submit {
       margin: 20px auto 0 auto;
       width: 40%;
@@ -183,13 +185,15 @@ main {
       background-color: #282c34;
       color: #eaeaea;
       text-decoration: none;
-      border-radius: 15px; }
+      border-radius: 15px;
+      cursor: pointer; }
     .form-container form #remember {
       align-self: flex-start; }
   .form-container #account-link {
     padding-top: 10px;
-    align-self: center;
-    color: #131619; }
+    align-self: center; }
+    .form-container #account-link a {
+      color: #131619; }
 
 @media (max-width: 1000px) {
   .form-container {

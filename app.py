@@ -10,29 +10,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String, unique=True, nullable=False)
-    email = db.Column(db.String, unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship("Post", backref="author", lazy=True)
 
-    def __repr__(self):
-        return f"{self.username}"
-
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String, nullable=False)
-    subtitle = db.Column(db.String, nullable=False)
-    content = db.Column(db.Text, nullable=False)
-    date_created = db.Column(db.String, nullable=False)
-    image = db.Column(db.String, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-
-    def __repr__(self):
-        return f"Post('{self.title}', '{self.date_created}')"
-
-today = datetime.date.today().strftime("%b %d, %Y")
+from models import User, Post
+ 
 
 @app.route("/")
 def home():
@@ -53,7 +33,7 @@ def add_post():
             author=request.form["author"],
             subtitle=request.form["subtitle"],
             content=request.form["content"],
-            date_created=today,
+            date_created=datetime.date.today().strftime("%b %d, %Y"),
             image=request.form["image"],
             image_alt_text=request.form["image_text"]
         )

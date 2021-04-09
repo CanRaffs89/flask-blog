@@ -20,6 +20,10 @@
             padding: 20px 0 5px 0;
         }
 
+        #cke_ckeditor {
+            margin-top: 20px;
+        }
+
         #submit {
             margin: 20px auto 0 auto;
             width: 40%;
@@ -29,6 +33,7 @@
             color: $light;
             text-decoration: none;
             border-radius: 15px;
+            cursor: pointer;
         }
 
         #remember {
@@ -38,7 +43,10 @@
     #account-link {
         padding-top: 10px;
         align-self: center;
-        color: $dark;
+        
+        a {
+            color: $dark;
+        }
     }
 }
 
