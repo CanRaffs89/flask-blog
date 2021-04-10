@@ -1,6 +1,7 @@
 $grey: #282c34;
 $dark: #131619;
 $light: #eaeaea;
+$message: #758199;
 
 :root {
     font-size: 16px;
@@ -38,6 +39,21 @@ h3, label, #submit {
     letter-spacing: 0.0625rem;
 }
 
+ul {
+    padding-left: 50px;
+    list-style: none;
+
+    li {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+        font-size: 0.8125rem;
+        letter-spacing: 0.0625rem;
+        color: $light;
+        background-color: $message;
+        padding: 10px;
+    }
+}
+
 .container {
     height: auto;
     width: 100%;
@@ -47,3 +63,4 @@ h3, label, #submit {
 @import 'main-blog';
 @import 'blog-post';
 @import 'form';
+@import 'dashboard';

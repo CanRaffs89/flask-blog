@@ -9,8 +9,18 @@
             {{ form.hidden_tag() }}
             {{ form.username.label() }}
             {{ form.username() }}
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <h3>{{ error }}</h3>
+                {% endfor %}    
+            {% endif %}    
             {{ form.email.label() }}
             {{ form.email() }}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <h3>{{ error }}</h3>
+                {% endfor %}    
+            {% endif %} 
             {{ form.password.label() }}
             {{ form.password() }}
             {{ form.password_confirm.label() }}

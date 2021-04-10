@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="dashboard-main">
+        <h1>Hello {{ current_user.username }}</h1>
+        <a href="{{url_for('logout')}}">Logout</a>
+    </div>
+</div>
+{% endblock %}

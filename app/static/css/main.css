@@ -27,6 +27,18 @@ h3, label, #submit {
   font-size: 0.8125rem;
   letter-spacing: 0.0625rem; }
 
+ul {
+  padding-left: 50px;
+  list-style: none; }
+  ul li {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    letter-spacing: 0.0625rem;
+    color: #eaeaea;
+    background-color: #758199;
+    padding: 10px; }
+
 .container {
   height: auto;
   width: 100%; }
@@ -199,5 +211,10 @@ main {
   .form-container {
     width: 80%;
     padding-left: 0; } }
+.dashboard-main {
+  padding-left: 50px;
+  height: auto;
+  width: 70%;
+  margin: 75px auto; }
 
 /*# sourceMappingURL=main.css.map */

@@ -10,6 +10,8 @@ wtforms = "*"
 flask-sqlalchemy = "*"
 email-validator = "*"
 flask-ckeditor = "*"
+flask-bcrypt = "*"
+flask-login = "*"
 
 [dev-packages]
 
