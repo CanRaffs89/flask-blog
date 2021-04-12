@@ -1,5 +1,5 @@
 import datetime
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, request, abort
 from flask_login import login_user, current_user, logout_user, login_required
 from app import app, db, bcrypt
 from app.forms import NewPostForm, RegisterForm, LoginForm
@@ -10,29 +10,61 @@ def home():
     all_posts = Post.query.order_by(Post.date_created).all()
     return render_template("index.html", posts=all_posts)
 
-@app.route("/post/<int:post_id>")
-def get_post(post_id):
-    selected_post = Post.query.get(post_id)
-    return render_template("post.html", post=selected_post)
-
 @app.route("/add", methods=["GET", "POST"])
 @login_required
 def add_post():
     form = NewPostForm()
-    if form.validate_on_submit() and request.method == "POST":
+    if form.validate_on_submit():
         new_post = Post(
-            title=request.form["title"],
-            author=request.form["author"],
-            subtitle=request.form["subtitle"],
-            content=request.form["content"],
+            title=form.title.data,
+            subtitle=form.subtitle.data,
+            content=form.content.data,
+            author=current_user,
             date_created=datetime.date.today().strftime("%b %d, %Y"),
-            image=request.form["image"],
-            image_alt_text=request.form["image_text"]
+            image=form.image.data
         )
         db.session.add(new_post)
         db.session.commit()
         return redirect(url_for("home"))
-    return render_template("add.html", form=form)
+    return render_template("add.html", form=form, title="Add New Post")
+
+@app.route("/post/<int:post_id>")
+def get_post(post_id):
+    selected_post = Post.query.get_or_404(post_id)
+    return render_template("post.html", post=selected_post)
+
+@app.route("/post/<int:post_id>/update", methods=["GET", "POST"])
+@login_required
+def edit_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    form = NewPostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.subtitle = form.subtitle.data
+        post.content = form.content.data
+        post.image = form.image.data
+        db.session.commit()
+        flash("Your post has been edited successfully!")
+        return redirect(url_for("get_post", post_id=post.id))
+    elif request.method == "GET":
+        form.title.data = post.title
+        form.subtitle.data = post.subtitle
+        form.content.data = post.content
+        form.image.data = post.image
+    return render_template("add.html", form=form, title="Edit Post")
+
+@app.route("/post/<int:post_id>/delete", methods=["POST"])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash("Your post has been successfully deleted!")
+    return redirect(url_for("home"))
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -66,8 +98,10 @@ def login():
     return render_template("login.html", form=form)
 
 @app.route("/dashboard")
+@login_required
 def dashboard():
-    return render_template("dashboard.html")
+    user_posts = current_user.posts
+    return render_template("dashboard.html", posts=user_posts)
 
 @app.route("/logout")
 def logout():

@@ -21,7 +21,7 @@ h1, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400; }
 
-h3, label, #submit {
+h3, label, #submit, #edit, #delete {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -216,5 +216,28 @@ main {
   height: auto;
   width: 70%;
   margin: 75px auto; }
+  .dashboard-main .dashboard-posts {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto; }
+    .dashboard-main .dashboard-posts h1 {
+      margin-top: 50px; }
+    .dashboard-main .dashboard-posts .dashboard-buttons {
+      display: flex; }
+      .dashboard-main .dashboard-posts .dashboard-buttons form {
+        height: auto;
+        width: 20%; }
+      .dashboard-main .dashboard-posts .dashboard-buttons #edit, .dashboard-main .dashboard-posts .dashboard-buttons #delete {
+        margin: 20px auto 0 auto;
+        width: 70%;
+        height: 30px;
+        border: none;
+        background-color: #282c34;
+        color: #eaeaea;
+        text-decoration: none;
+        border-radius: 15px;
+        cursor: pointer; }
+      .dashboard-main .dashboard-posts .dashboard-buttons #delete {
+        background-color: #ca1f1fd5; }
 
 /*# sourceMappingURL=main.css.map */

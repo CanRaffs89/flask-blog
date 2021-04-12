@@ -2,6 +2,7 @@ $grey: #282c34;
 $dark: #131619;
 $light: #eaeaea;
 $message: #758199;
+$danger: #ca1f1fd5;
 
 :root {
     font-size: 16px;
@@ -32,7 +33,7 @@ h1, p {
     font-weight: 400;
 }
 
-h3, label, #submit {
+h3, label, #submit, #edit, #delete {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 400;
     font-size: 0.8125rem;

@@ -3,4 +3,39 @@
     height: auto;
     width: 70%;
     margin: 75px auto;
+
+    .dashboard-posts {
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        .dashboard-buttons {
+            display: flex;
+
+            form {
+                height: auto;
+                width: 20%;
+            }
+
+            #edit, #delete {
+                margin: 20px auto 0 auto;
+                width: 70%;
+                height: 30px;
+                border: none;
+                background-color: $grey;
+                color: $light;
+                text-decoration: none;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            #delete {
+                background-color: $danger;
+            }
+        }
+    }    
 }
