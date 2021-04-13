@@ -9,33 +9,69 @@
         flex-direction: column;
         margin: 10px auto;
 
-        h1 {
-            margin-top: 50px;
-        }
-
-        .dashboard-buttons {
+        .dashboard-post {
             display: flex;
+            margin-top: 50px;
+            border-bottom: 1px $dark solid;
+            padding-bottom: 25px;
 
-            form {
-                height: auto;
-                width: 20%;
-            }
-
-            #edit, #delete {
-                margin: 20px auto 0 auto;
+            h1 {
                 width: 70%;
-                height: 30px;
-                border: none;
-                background-color: $grey;
-                color: $light;
-                text-decoration: none;
-                border-radius: 15px;
-                cursor: pointer;
             }
 
-            #delete {
-                background-color: $danger;
+            .dashboard-buttons {
+                display: flex;
+                width: 30%;
+
+                form {
+                    height: auto;
+                    width: 50%;
+                }
+    
+                #edit, #delete {
+                    width: 70%;
+                    height: 30px;
+                    border: none;
+                    background-color: $grey;
+                    color: $light;
+                    text-decoration: none;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+    
+                #delete {
+                    background-color: $danger;
+                }
             }
         }
     }    
+}
+
+@media (max-width: 1000px) {
+    .dashboard-main {
+        padding-left: 0px;
+        width: 80%;
+
+        .dashboard-posts {
+            .dashboard-post {
+                h1 {
+                    font-size: 1.4rem;
+                    margin-right: 5px;
+                }
+
+                .dashboard-buttons {
+                    flex-direction: column;
+
+                    form {
+                        width: 100%;
+                        margin-bottom: 5px;
+                    }
+
+                    #edit, #delete {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }

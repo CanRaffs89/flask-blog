@@ -106,7 +106,7 @@ main {
 
 @media (max-width: 1000px) {
   main {
-    margin: 50px auto;
+    margin: 50px auto 100px auto;
     width: 80%; }
     main .blog-post {
       min-height: 100px;
@@ -220,24 +220,44 @@ main {
     display: flex;
     flex-direction: column;
     margin: 10px auto; }
-    .dashboard-main .dashboard-posts h1 {
-      margin-top: 50px; }
-    .dashboard-main .dashboard-posts .dashboard-buttons {
-      display: flex; }
-      .dashboard-main .dashboard-posts .dashboard-buttons form {
-        height: auto;
-        width: 20%; }
-      .dashboard-main .dashboard-posts .dashboard-buttons #edit, .dashboard-main .dashboard-posts .dashboard-buttons #delete {
-        margin: 20px auto 0 auto;
-        width: 70%;
-        height: 30px;
-        border: none;
-        background-color: #282c34;
-        color: #eaeaea;
-        text-decoration: none;
-        border-radius: 15px;
-        cursor: pointer; }
-      .dashboard-main .dashboard-posts .dashboard-buttons #delete {
-        background-color: #ca1f1fd5; }
+    .dashboard-main .dashboard-posts .dashboard-post {
+      display: flex;
+      margin-top: 50px;
+      border-bottom: 1px #131619 solid;
+      padding-bottom: 25px; }
+      .dashboard-main .dashboard-posts .dashboard-post h1 {
+        width: 70%; }
+      .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons {
+        display: flex;
+        width: 30%; }
+        .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons form {
+          height: auto;
+          width: 50%; }
+        .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #edit, .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #delete {
+          width: 70%;
+          height: 30px;
+          border: none;
+          background-color: #282c34;
+          color: #eaeaea;
+          text-decoration: none;
+          border-radius: 15px;
+          cursor: pointer; }
+        .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #delete {
+          background-color: #ca1f1fd5; }
+
+@media (max-width: 1000px) {
+  .dashboard-main {
+    padding-left: 0px;
+    width: 80%; }
+    .dashboard-main .dashboard-posts .dashboard-post h1 {
+      font-size: 1.4rem;
+      margin-right: 5px; }
+    .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons {
+      flex-direction: column; }
+      .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons form {
+        width: 100%;
+        margin-bottom: 5px; }
+      .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #edit, .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #delete {
+        width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

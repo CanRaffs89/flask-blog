@@ -5,8 +5,9 @@
 <div class="container">
     <div class="dashboard-main">
         <h1>Hello {{ current_user.username }}</h1>
-        <section class="dashboard-posts">
+        <div class="dashboard-posts">
             {% for post in posts %}
+            <section class="dashboard-post">
                 <h1>{{ post.title }}</h1>
                 <div class="dashboard-buttons">
                     <form action="{{ url_for('edit_post', post_id=post.id) }}" method="GET">
@@ -16,9 +17,9 @@
                         <input id="delete" name="submit" type="submit" value="Delete">
                     </form>
                 </div>
+            </section>
             {% endfor %}
-        </section>
-            
+        </div>
         <a href="{{url_for('logout')}}">Logout</a>
     </div>
 </div>

@@ -7,7 +7,7 @@ from app.models import User, Post
 
 @app.route("/")
 def home():
-    all_posts = Post.query.order_by(Post.date_created).all()
+    all_posts = Post.query.order_by(Post.date_created.desc()).all()
     return render_template("index.html", posts=all_posts)
 
 @app.route("/add", methods=["GET", "POST"])
