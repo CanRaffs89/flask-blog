@@ -44,7 +44,19 @@
                 }
             }
         }
-    }    
+    } 
+    #logout {
+        display: inline-block;
+        width: 30%;
+        height: 30px;
+        background-color: $grey;
+        color: $light;
+        text-decoration: none;
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 1rem;
+    }   
 }
 
 @media (max-width: 1000px) {

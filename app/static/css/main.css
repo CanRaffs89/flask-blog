@@ -21,7 +21,7 @@ h1, p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400; }
 
-h3, label, #submit, #edit, #delete {
+h3, label, #submit, #edit, #delete, #logout {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -244,6 +244,17 @@ main {
           cursor: pointer; }
         .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #delete {
           background-color: #ca1f1fd5; }
+  .dashboard-main #logout {
+    display: inline-block;
+    width: 30%;
+    height: 30px;
+    background-color: #282c34;
+    color: #eaeaea;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1rem; }
 
 @media (max-width: 1000px) {
   .dashboard-main {
