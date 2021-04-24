@@ -2,11 +2,12 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from app.models import User
+from flask_ckeditor import CKEditorField
 
 class NewPostForm(FlaskForm):
     title = StringField("Title", validators=[DataRequired()])
     subtitle = StringField("Subtitle", validators=[DataRequired()])
-    content = TextAreaField("Content", validators=[DataRequired()])
+    body = CKEditorField("Body", validators=[DataRequired()])
     image = StringField("Image URL", validators=[DataRequired()])
     submit = SubmitField("Submit")
 

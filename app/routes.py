@@ -18,7 +18,7 @@ def add_post():
         new_post = Post(
             title=form.title.data,
             subtitle=form.subtitle.data,
-            content=form.content.data,
+            body=form.body.data,
             author=current_user,
             date_created=datetime.date.today().strftime("%b %d, %Y"),
             image=form.image.data
@@ -43,7 +43,7 @@ def edit_post(post_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.subtitle = form.subtitle.data
-        post.content = form.content.data
+        post.body = form.body.data
         post.image = form.image.data
         db.session.commit()
         flash("Your post has been edited successfully!")
@@ -51,7 +51,7 @@ def edit_post(post_id):
     elif request.method == "GET":
         form.title.data = post.title
         form.subtitle.data = post.subtitle
-        form.content.data = post.content
+        form.body.data = post.body
         form.image.data = post.image
     return render_template("add.html", form=form, title="Edit Post")
 

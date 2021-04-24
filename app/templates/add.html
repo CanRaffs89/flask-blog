@@ -11,12 +11,14 @@
             {{ form.title() }}
             {{ form.subtitle.label() }}
             {{ form.subtitle() }}
-            {{ form.content.label() }}
-            {{ form.content() }}
+            {{ form.body.label() }}
+            {{ form.body }}
             {{ form.image.label() }}
             {{ form.image() }}
             {{ form.submit() }}
         </form>
+        {{ ckeditor.load(pkg_type='basic') }}
+        {{ ckeditor.config(name='body') }}
     </div>
 </div>
 {% endblock %}
