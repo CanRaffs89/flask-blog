@@ -37,6 +37,7 @@
                     text-decoration: none;
                     border-radius: 15px;
                     cursor: pointer;
+                    -webkit-appearance: none;
                 }
     
                 #delete {
@@ -56,6 +57,7 @@
         text-align: center;
         padding-top: 10px;
         font-size: 1rem;
+        -webkit-appearance: none;
     }   
 }
 

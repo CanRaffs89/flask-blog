@@ -60,6 +60,12 @@ ul {
     width: 100%;
 }
 
+@media (max-width: 1000px) {
+    ul {
+        padding-left: 0;
+    }
+}
+
 @import 'navbar';
 @import 'main-blog';
 @import 'blog-post';

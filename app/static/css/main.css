@@ -43,6 +43,9 @@ ul {
   height: auto;
   width: 100%; }
 
+@media (max-width: 1000px) {
+  ul {
+    padding-left: 0; } }
 .footer-menu {
   background: #282c34;
   display: flex;
@@ -118,7 +121,7 @@ main {
         font-size: 0.625rem;
         letter-spacing: 0.0625rem; }
       main .blog-post .blog-post-text h1 {
-        font-size: 1.563rem; }
+        font-size: 1.4rem; }
       main .blog-post .blog-post-text .hide-on-mobile {
         display: none; } }
 .main-post {
@@ -185,6 +188,8 @@ main {
   .form-container form {
     display: flex;
     flex-direction: column; }
+    .form-container form #email, .form-container form #password, .form-container form #title, .form-container form #subtitle, .form-container form #image, .form-container form #submit {
+      -webkit-appearance: none; }
     .form-container form label {
       padding: 20px 0 5px 0; }
     .form-container form #cke_ckeditor {
@@ -241,7 +246,8 @@ main {
           color: #eaeaea;
           text-decoration: none;
           border-radius: 15px;
-          cursor: pointer; }
+          cursor: pointer;
+          -webkit-appearance: none; }
         .dashboard-main .dashboard-posts .dashboard-post .dashboard-buttons #delete {
           background-color: #ca1f1fd5; }
   .dashboard-main #logout {
@@ -254,7 +260,8 @@ main {
     border-radius: 20px;
     text-align: center;
     padding-top: 10px;
-    font-size: 1rem; }
+    font-size: 1rem;
+    -webkit-appearance: none; }
 
 @media (max-width: 1000px) {
   .dashboard-main {
