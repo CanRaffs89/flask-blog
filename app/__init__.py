@@ -11,7 +11,7 @@ ENV = 'prod'
 if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password123@localhost/flask_blog'
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://flask_blog_database_user:qefQtKB8TN9RfNvF6vtg7THl3rdpRbTD@dpg-cc8gfb1a6gdlv717gkc0-a.frankfurt-postgres.render.com/flask_blog_database'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://flask_blog_database_v8lr_user:D2p8Q7IooHrdT8gRISX0IliTnsZuq9Ws@dpg-ce3sanha6gdqkro3ckbg-a.frankfurt-postgres.render.com/flask_blog_database_v8lr'
 
 app.config['SECRET_KEY'] = '40014fa522110b5a21b52cca'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
