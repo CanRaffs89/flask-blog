@@ -1,19 +1,23 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_ckeditor import CKEditor
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+load_dotenv()
 
 ENV = 'prod'
 
 if ENV == 'dev':
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password123@localhost/flask_blog'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DEV_DB_URI")
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://flask_blog_database_v8lr_user:D2p8Q7IooHrdT8gRISX0IliTnsZuq9Ws@dpg-ce3sanha6gdqkro3ckbg-a.frankfurt-postgres.render.com/flask_blog_database_v8lr'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("PROD_DB_URI")
 
-app.config['SECRET_KEY'] = '40014fa522110b5a21b52cca'
+app.config['SECRET_KEY'] = os.getenv("KEY")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
